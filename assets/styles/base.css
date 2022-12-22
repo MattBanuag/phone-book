@@ -2,6 +2,12 @@
 /* = = = = = = = = = = = = = = = */
 /* BODY STYLES                   */
 /* = = = = = = = = = = = = = = = */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 article {
     display: flex;
     flex-direction: column;
@@ -10,8 +16,11 @@ article {
     text-align: center;
 }
 
-table {
-    width: 75%;
-    text-align: center;
+button {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #FFF;
+    background-color: #0077b6;
 }
 
