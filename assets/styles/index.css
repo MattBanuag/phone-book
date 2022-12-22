@@ -5,13 +5,16 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: calc(100vh - 90px);
-    margin: 50px auto;
+    gap: 70px;
+    margin: 50px 90px;
 }
 
 /* = = = = = = = = = = = = = = = */
 /* CONTACTS                      */
 /* = = = = = = = = = = = = = = = */
-
+.contacts-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
