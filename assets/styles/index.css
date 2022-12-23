@@ -5,10 +5,22 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 15px;
     width: 35vw;
     height: 100vh;
+    padding: 20px;
     background-color: #001a2c;
+}
+
+.user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.add-btn {
+    font-size: 1.9rem;
+    color: #54B435;
 }
 
 /* = = = = = = = = = = = = = = = */
