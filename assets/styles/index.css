@@ -2,6 +2,9 @@
 /* = = = = = = = = = = = = = = = */
 /* WRAPPER                       */
 /* = = = = = = = = = = = = = = = */
+.wrapper {
+    height: 100vh;
+}
 
 /* = = = = = = = = = = = = = = = */
 /* HEADER                        */
@@ -16,3 +19,20 @@ header {
 header button {
     background-color: #006c2c;
 }
+
+/* = = = = = = = = = = = = = = = */
+/* MAIN-CONTENT                  */
+/* = = = = = = = = = = = = = = = */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.search-form i {
+    padding: 10px;
+    background-color: #0077b6;
+}
+
