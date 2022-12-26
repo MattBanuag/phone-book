@@ -17,7 +17,7 @@ header {
 }
 
 header button {
-    background-color: #006c2c;
+    background-color: #2a9134;
 }
 
 /* = = = = = = = = = = = = = = = */
@@ -28,11 +28,20 @@ header button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin: 25px 200px;
 }
 
 .search-form i {
     padding: 10px;
     background-color: #0077b6;
 }
+
+.action-btns i {
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.fa-pencil { color: #ff9914; }
+.fa-trash-can { color: #f21b3f; }
+
 
