@@ -3,4 +3,16 @@
 /* WRAPPER                       */
 /* = = = = = = = = = = = = = = = */
 
+/* = = = = = = = = = = = = = = = */
+/* HEADER                        */
+/* = = = = = = = = = = = = = = = */
+header {
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 200px;
+    background-color: #343a40;
+}
 
+header button {
+    background-color: #006c2c;
+}

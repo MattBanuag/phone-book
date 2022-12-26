@@ -2,5 +2,24 @@
 /* = = = = = = = = = = = = = = = */
 /* BODY STYLES                   */
 /* = = = = = = = = = = = = = = = */
+* {
+    color: #FFF;
+}
 
+body {
+    background-color: #212529;
+}
 
+button {
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+/* = = = = = = = = = = = = = = = */
+/* FLEXBOX                       */
+/* = = = = = = = = = = = = = = = */
+header {
+    display: flex;
+    align-items: center;
+}
