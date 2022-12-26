@@ -17,15 +17,39 @@ button {
 }
 
 input[type=text] {
-    width: 250px;
+    width: 400px;
     padding: 8px 15px;
     color: #000;
+}
+
+table {
+    margin-top: 25px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+table td, table th {
+    padding: 15px;
+}
+
+table td {
+    border-bottom: 1px solid #ddd;
+}
+      
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0077b6;
 }
 
 /* = = = = = = = = = = = = = = = */
 /* FLEXBOX                       */
 /* = = = = = = = = = = = = = = = */
-header, .search-form {
+header, .search-form, .action-btns {
     display: flex;
     align-items: center;
 }
