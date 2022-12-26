@@ -2,33 +2,5 @@
 /* = = = = = = = = = = = = = = = */
 /* BODY STYLES                   */
 /* = = = = = = = = = = = = = = = */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-}
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-button {
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 700;
-    color: #FFF;
-    background-color: #0077b6;
-}
-
-input {
-    width: 100%;
-    padding: 15px;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    color: #FFF;
-    background-color: rgba(0,0,0,0.3);
-}
 

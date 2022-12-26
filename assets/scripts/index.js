@@ -9,8 +9,3 @@ function select(selector, parent = document) {
     return parent.querySelector(selector);
 }
 
-// HTML DOCUMENT BRIDGE
-const addBtn = select('.add-btn');
-const dialog = select('dialog');
-
-dialog.showModal();
