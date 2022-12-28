@@ -29,7 +29,7 @@
                 </article>
 
                 <div>
-                    <button class="add-btn">
+                    <button class="add-modal-btn">
                         <i class="fa-solid fa-circle-plus"></i> New Contact
                     </button>
                 </div>
@@ -154,7 +154,19 @@
         </main>
     </body>
     <dialog class="add-contact-modal">
+        <h2>Add New Contact</h2>
 
+        <form>
+            <input type="text" placeholder="Name" class="name-input">
+            <input type="text" placeholder="Address" class="address-input">
+            <input type="text" placeholder="Phone" class="phone-input">
+            <input type="text" placeholder="Email" class="email-input">
+        </form>
+
+        <div class="modal-btns">
+          <button class="add-btn">Add</button>
+          <button class="cancel-btn">Cancel</button>
+        </div>
     </dialog>
     <noscript>
         <p>This game requires JavaScript enabled</p>

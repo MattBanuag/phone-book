@@ -10,14 +10,13 @@ body {
     background-color: #212529;
 }
 
-button {
+button, input[type=button] {
     padding: 8px;
     border-radius: 5px;
     font-weight: 700;
 }
 
 input[type=text] {
-    width: 400px;
     padding: 8px 15px;
     color: #000;
 }
@@ -49,7 +48,7 @@ table th {
 /* = = = = = = = = = = = = = = = */
 /* FLEXBOX                       */
 /* = = = = = = = = = = = = = = = */
-header, .search-form, .action-btns {
+header, .search-form, .action-btns, .modal-btns {
     display: flex;
     align-items: center;
 }
