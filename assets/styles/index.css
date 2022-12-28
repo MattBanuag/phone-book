@@ -18,6 +18,7 @@ header {
 
 header button {
     background-color: #2a9134;
+    cursor: pointer;
 }
 
 /* = = = = = = = = = = = = = = = */
@@ -36,12 +37,53 @@ header button {
     background-color: #0077b6;
 }
 
+.search-input {
+    width: 400px;
+}
+
 .action-btns i {
     padding: 10px;
     font-size: 1.2rem;
 }
 
 .fa-pencil { color: #ff9914; }
-.fa-trash-can { color: #f21b3f; }
+.fa-trash-can { color: #f21b3f; } 
 
+/* = = = = = = = = = = = = = = = */
+/* MODALS                        */
+/* = = = = = = = = = = = = = = = */
+.add-contact-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 25%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 4px;
+    background-color: #FFF;
+}
 
+.add-contact-modal input[type=text] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #F1F2F9;
+}
+
+.modal-btns {
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.add-contact-modal button {
+    width: 60px;
+    color: #FFF;
+}
+
+.add-btn { background-color: #2a9134; }
+.cancel-btn { background-color: #e63946; }
+
+.add-contact-modal * {
+    color: #212529;
+}
