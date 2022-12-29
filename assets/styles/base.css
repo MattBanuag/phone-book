@@ -48,7 +48,8 @@ table th {
 /* = = = = = = = = = = = = = = = */
 /* FLEXBOX                       */
 /* = = = = = = = = = = = = = = = */
-header, .search-form, .action-btns, .modal-btns {
+header, .search-form, .action-btns, .add-contact-modal,
+.add-contact-modal form, .modal-btns {
     display: flex;
     align-items: center;
 }
