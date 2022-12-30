@@ -34,16 +34,26 @@ function showData() {
     for(let contact of allContacts) {
         table.innerHTML += `
         <tr class="contact-box">
-            <td>${contact.name}</td>
+            <td class="name-value">${contact.name}</td>
             <td>${contact.address}</td>
             <td>${contact.phone}</td>
             <td>${contact.email}</td>
-            <td class="action-btns">
+            <!-- <td class="action-btns">
                 <i class="fa-solid fa-trash-can delete-btn"></i>
-            </td>
+            </td> -->
         </tr>
         `;
     }
+
+    // // Deleting Contact
+    // const deleteBtn = select('.delete-btn');
+    // const nameValue = select('.name-value').innerHTML;
+    // onEvent('click', deleteBtn, () => {
+    //     const myContacts = localStorage.getItem('Contacts'); 
+    //     if(myContacts.includes(nameValue)) {
+    //         myContacts.slice(myContacts.includes(nameValue));
+    //     }
+    // });
 }
 
 // Save Result Function
@@ -107,3 +117,5 @@ onEvent('click', dialog, function(event) {
         dialog.close();
     }
 });
+
+//console.log(JSON.parse(localStorage.getItem('Contacts'))[0]);
