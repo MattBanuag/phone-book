@@ -20,6 +20,11 @@ function clearInputs(inputs) {
     }
 }
 
+function randomId() {
+    let id = `${Math.floor(Math.random() * 100)}CO`;
+    return id;
+}
+
 // Preparing LocalStorage Function
 function prepStorage() {
     if(localStorage.getItem('Contacts') == null) {
@@ -34,31 +39,23 @@ function showData() {
     for(let contact of allContacts) {
         table.innerHTML += `
         <tr class="contact-box">
-            <td class="name-value">${contact.name}</td>
+            <td>${contact.name}</td>
             <td>${contact.address}</td>
             <td>${contact.phone}</td>
             <td>${contact.email}</td>
-            <!-- <td class="action-btns">
-                <i class="fa-solid fa-trash-can delete-btn"></i>
-            </td> -->
+            <td class="action-btns">
+                <i class="fa-solid fa-trash-can ${contact.id}"
+                onClick="deleteContact(this)"></i>
+            </td>
         </tr>
         `;
     }
-
-    // // Deleting Contact
-    // const deleteBtn = select('.delete-btn');
-    // const nameValue = select('.name-value').innerHTML;
-    // onEvent('click', deleteBtn, () => {
-    //     const myContacts = localStorage.getItem('Contacts'); 
-    //     if(myContacts.includes(nameValue)) {
-    //         myContacts.slice(myContacts.includes(nameValue));
-    //     }
-    // });
 }
 
 // Save Result Function
-function saveData(name, address, phone, email) {
+function saveData(id, name, address, phone, email) {
     const contactInfo = {
+        id: id,
         name: name,
         address: address,
         phone: phone,
@@ -72,6 +69,22 @@ function saveData(name, address, phone, email) {
     localStorage.setItem('Contacts', JSON.stringify(oldContacts));
 }
 
+// Delete Contact Function
+function deleteContact(btn) {
+    const myContacts = JSON.parse(localStorage.getItem('Contacts'));
+    const id = btn.classList[2].toString();
+    const index = myContacts.findIndex(btn => {
+        return btn.id === id;
+    });
+
+    // Delete item/contact
+    myContacts.splice(index, 1);
+
+    // After splicing update localstorage
+    localStorage.setItem('Contacts', JSON.stringify(myContacts));
+    location.reload();
+}
+
 // HTML DOC BRIDGE
 const dialog = select('dialog');
 const addModal = select('.add-contact-modal');
@@ -82,6 +95,7 @@ const table = select('table');
 const inputs = selectAll('input');
 
 // APP SETUP
+let id = 0;
 clearInputs(inputs);
 prepStorage();
 showData();
@@ -93,12 +107,13 @@ onEvent('click', addModalBtn, () => {
 });
 
 onEvent('click', addBtn, () => {
+    let id = randomId();
     let name = select('.name-input').value;
     let address = select('.address-input').value;
     let phone = select('.phone-input').value;
     let email = select('.email-input').value;
 
-    saveData(name, address, phone, email);
+    saveData(id, name, address, phone, email);
     clearInputs(inputs);
     location.reload();
     addModal.close();
@@ -117,5 +132,3 @@ onEvent('click', dialog, function(event) {
         dialog.close();
     }
 });
-
-//console.log(JSON.parse(localStorage.getItem('Contacts'))[0]);
