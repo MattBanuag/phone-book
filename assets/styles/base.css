@@ -10,6 +10,10 @@ body {
     background-color: #212529;
 }
 
+i {
+    cursor: pointer;
+}
+
 button, input[type=button] {
     padding: 8px;
     border-radius: 5px;

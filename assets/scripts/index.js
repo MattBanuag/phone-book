@@ -49,18 +49,24 @@ function showData() {
 
     for(let contact of allContacts) {
         table.innerHTML += `
-        <tr>
+        <tr class="contact-box">
             <td>${contact.name}</td>
             <td>${contact.address}</td>
             <td>${contact.phone}</td>
             <td>${contact.email}</td>
             <td class="action-btns">
-                <i class="fa-solid fa-pencil"></i>
-                <i class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-trash-can delete-btn"></i>
             </td>
         </tr>
     `;
     }
+}
+
+// Delete Contact Function
+function deleteContact() {
+    const contactBox  = select('.contact-box');
+    contactBox.parentNode.removeChild(contactBox);
+    console.log('It worked');
 }
 
 // HTML DOC BRIDGE
@@ -70,6 +76,7 @@ const addModalBtn = select('.add-modal-btn');
 const addBtn = select('.add-btn');
 const cancelBtn = select('.cancel-btn');
 const table = select('table');
+const deleteBtn = select('.delete-btn');
 const inputs = selectAll('input');
 
 // APP SETUP
@@ -94,6 +101,9 @@ onEvent('click', addBtn, () => {
     showData();
     addModal.close();
 });
+    
+// Deleting Contact 
+onEvent('click', deleteBtn, deleteContact());
 
 // Closing Modals
 onEvent('click', cancelBtn, () => {
