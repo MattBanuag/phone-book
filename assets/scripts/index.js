@@ -27,6 +27,25 @@ function prepStorage() {
     }
 }
 
+// Show Contacts Function
+function showData() {
+    const allContacts = JSON.parse(localStorage.getItem('Contacts'));
+
+    for(let contact of allContacts) {
+        table.innerHTML += `
+        <tr class="contact-box">
+            <td>${contact.name}</td>
+            <td>${contact.address}</td>
+            <td>${contact.phone}</td>
+            <td>${contact.email}</td>
+            <td class="action-btns">
+                <i class="fa-solid fa-trash-can delete-btn"></i>
+            </td>
+        </tr>
+        `;
+    }
+}
+
 // Save Result Function
 function saveData(name, address, phone, email) {
     const contactInfo = {
@@ -43,32 +62,6 @@ function saveData(name, address, phone, email) {
     localStorage.setItem('Contacts', JSON.stringify(oldContacts));
 }
 
-// Show Contacts Function
-function showData() {
-    const allContacts = JSON.parse(localStorage.getItem('Contacts'));
-
-    for(let contact of allContacts) {
-        table.innerHTML += `
-        <tr class="contact-box">
-            <td>${contact.name}</td>
-            <td>${contact.address}</td>
-            <td>${contact.phone}</td>
-            <td>${contact.email}</td>
-            <td class="action-btns">
-                <i class="fa-solid fa-trash-can delete-btn"></i>
-            </td>
-        </tr>
-    `;
-    }
-}
-
-// Delete Contact Function
-function deleteContact() {
-    const contactBox  = select('.contact-box');
-    contactBox.parentNode.removeChild(contactBox);
-    console.log('It worked');
-}
-
 // HTML DOC BRIDGE
 const dialog = select('dialog');
 const addModal = select('.add-contact-modal');
@@ -76,7 +69,6 @@ const addModalBtn = select('.add-modal-btn');
 const addBtn = select('.add-btn');
 const cancelBtn = select('.cancel-btn');
 const table = select('table');
-const deleteBtn = select('.delete-btn');
 const inputs = selectAll('input');
 
 // APP SETUP
@@ -98,13 +90,10 @@ onEvent('click', addBtn, () => {
 
     saveData(name, address, phone, email);
     clearInputs(inputs);
-    showData();
+    location.reload();
     addModal.close();
 });
     
-// Deleting Contact 
-onEvent('click', deleteBtn, deleteContact());
-
 // Closing Modals
 onEvent('click', cancelBtn, () => {
     addModal.close();
