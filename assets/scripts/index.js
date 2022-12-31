@@ -33,7 +33,7 @@ function prepStorage() {
 }
 
 // Show Contacts Function
-function showData() {
+function showContacts() {
     const allContacts = JSON.parse(localStorage.getItem('Contacts'));
 
     for(let contact of allContacts) {
@@ -53,7 +53,7 @@ function showData() {
 }
 
 // Save Result Function
-function saveData(id, name, address, phone, email) {
+function saveContact(id, name, address, phone, email) {
     const contactInfo = {
         id: id,
         name: name,
@@ -91,14 +91,14 @@ const addModal = select('.add-contact-modal');
 const addModalBtn = select('.add-modal-btn');
 const addBtn = select('.add-btn');
 const cancelBtn = select('.cancel-btn');
+const searchInput = select('.search-input');
 const table = select('table');
 const inputs = selectAll('input');
 
 // APP SETUP
-let id = 0;
 clearInputs(inputs);
 prepStorage();
-showData();
+showContacts();
 
 // EVENT LISTENERS
 // Showing Add Contact Modal
@@ -106,19 +106,6 @@ onEvent('click', addModalBtn, () => {
     addModal.showModal();
 });
 
-onEvent('click', addBtn, () => {
-    let id = randomId();
-    let name = select('.name-input').value;
-    let address = select('.address-input').value;
-    let phone = select('.phone-input').value;
-    let email = select('.email-input').value;
-
-    saveData(id, name, address, phone, email);
-    clearInputs(inputs);
-    location.reload();
-    addModal.close();
-});
-    
 // Closing Modals
 onEvent('click', cancelBtn, () => {
     addModal.close();
@@ -132,3 +119,31 @@ onEvent('click', dialog, function(event) {
         dialog.close();
     }
 });
+
+// Searching Data(In Construction)
+// onEvent('input', searchInput, (e) => {
+//     const contactsArray = localStorage.getItem('Contacts').toLowerCase();
+//     const contacts = JSON.parse(localStorage.getItem('Contacts'));
+//     const value = e.target.value.toLowerCase();
+//     if(contactsArray.includes(value)) {
+//         console.log('Found');
+//     } else {
+//         console.log('Not Found');
+//     }
+// });
+
+// Saving Data
+onEvent('click', addBtn, () => {
+    let id = randomId();
+    let name = select('.name-input').value;
+    let address = select('.address-input').value;
+    let phone = select('.phone-input').value;
+    let email = select('.email-input').value;
+
+    saveContact(id, name, address, phone, email);
+    clearInputs(inputs);
+    location.reload();
+    addModal.close();
+});
+    
+

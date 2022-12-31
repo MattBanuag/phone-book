@@ -32,11 +32,6 @@ header button {
     margin: 25px 200px;
 }
 
-.search-form i {
-    padding: 10px;
-    background-color: #0077b6;
-}
-
 .search-input {
     width: 400px;
 }
@@ -52,6 +47,10 @@ header button {
 
 .fa-pencil { color: #ff9914; }
 .fa-trash-can { color: #f21b3f; } 
+
+.hide {
+    display: none;
+}
 
 /* = = = = = = = = = = = = = = = */
 /* MODALS                        */
